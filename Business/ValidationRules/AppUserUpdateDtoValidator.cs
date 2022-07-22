@@ -12,7 +12,7 @@ namespace Business.ValidationRules
     {
         public AppUserUpdateDtoValidator()
         {
-            RuleFor(x => x.Id).NotEmpty().WithMessage("Id boş geçilemez");
+            RuleFor(x => x.Id).InclusiveBetween(1, int.MaxValue).WithMessage("Id alanı boş geçilemez");
         }
     }
 }
