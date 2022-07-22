@@ -1,0 +1,10 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model List<Skill>
+@foreach (var item in Model)
+{
+    <p>@item.Id</p>
+    <p>@item.Description</p>
+}

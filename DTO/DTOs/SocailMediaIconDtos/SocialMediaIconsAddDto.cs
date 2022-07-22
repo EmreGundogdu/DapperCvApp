@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DTO.DTOs.SocailMediaIconDtos
 {
-    public class SocailMediaIconsAddDto : IDto
+    public class SocialMediaIconsAddDto : IDto
     {
         public int Id { get; set; }
         public string Link { get; set; }
