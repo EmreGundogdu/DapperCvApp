@@ -30,6 +30,9 @@ namespace Business.IOC.Microsoft
             services.AddTransient<IDbConnection>(con => new SqlConnection(configuration.GetConnectionString("SqlConnection")));
             services.AddScoped(typeof(IGenericRepository<>), typeof(DpGenericRepository<>));
             services.AddScoped(typeof(IGenericService<>), typeof(GenericManager<>));
+            services.AddScoped<IAppUserRepository, DpAppUserRepository>();
+            services.AddScoped<IAppUserService, AppUserManager>();
+
             services.AddTransient<IValidator<AppUserUpdateDto>, AppUserUpdateDtoValidator>();
             services.AddTransient<IValidator<CertificationAddDto>, CertificationAddDtoValidator>();
             services.AddTransient<IValidator<CertificationUpdateDto>, CertificationUpdateDtoValidator>();
