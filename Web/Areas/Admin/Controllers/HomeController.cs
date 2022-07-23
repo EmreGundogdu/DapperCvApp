@@ -2,6 +2,7 @@
 using DTO.DTOs.AppUserDtos;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Web.Models;
 
 namespace Web.Areas.Admin.Controllers
 {
@@ -19,8 +20,9 @@ namespace Web.Areas.Admin.Controllers
         public IActionResult Index()
         {
             var user = _appUserService.FindByName(User.Identity.Name);
-            var appUserListDto = new AppUserListDto
+            var appUserListDto = new AppUserUpdateModel
             {
+                FirstName = user.FirstName,
                 Email = user.Email,
                 Address = user.Address,
                 UserName = user.UserName,
