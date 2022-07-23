@@ -25,7 +25,6 @@ namespace Web.Areas.Admin.Controllers
                 FirstName = user.FirstName,
                 Email = user.Email,
                 Address = user.Address,
-                UserName = user.UserName,
                 Id = user.Id,
                 ImageUrl = user.ImageUrl,
                 LastName = user.LastName,
@@ -33,6 +32,30 @@ namespace Web.Areas.Admin.Controllers
                 ShortDescription = user.ShortDescription,
             };
             return View(appUserListDto);
+        }
+        [HttpPost]
+        public IActionResult Index(AppUserUpdateModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var updateAppUser = _appUserService.GetById(model.Id);
+                if (model.Picture != null)
+                {
+                    var imgName = Guid.NewGuid() + Path.GetExtension(model.Picture.FileName);
+                    var path = Directory.GetCurrentDirectory() + "/wwwroot/img" + imgName;
+                    var stream = new FileStream(path, FileMode.Create);
+                    model.Picture.CopyTo(stream);
+                    updateAppUser.ImageUrl = imgName;
+                };
+                updateAppUser.LastName = model.LastName;
+                updateAppUser.FirstName = model.FirstName;
+                updateAppUser.PhoneNumber = model.PhoneNumber;
+                updateAppUser.ShortDescription = model.ShortDescription;
+                updateAppUser.Address = model.Address;
+                updateAppUser.Email = model.Email;
+                _appUserService.Update(updateAppUser);
+            };
+            return View(model);
         }
     }
 }
