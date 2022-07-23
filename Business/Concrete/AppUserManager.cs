@@ -24,5 +24,10 @@ namespace Business.Concrete
         {
             return _appUserRepository.CheckUser(userName, password);
         }
+
+        public AppUser FindByName(string userName)
+        {
+            return _appUserRepository.FindByName(userName);
+        }
     }
 }

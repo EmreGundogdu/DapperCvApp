@@ -21,8 +21,22 @@ namespace DataAccess.Concrete.Dapper
 
         public bool CheckUser(string userName, string password)
         {
-            var user = _dbConnection.QueryFirstOrDefault<AppUser>("select * from AppUsers where UserName=@userName and Password=@password");
-            return user != null;
+            var user = _dbConnection.QueryFirstOrDefault<AppUser>("select * from AppUsers where UserName=@userName and Password=@password", new
+            {
+                UserName = userName,
+                Password = password
+            });
+            if (user is not null)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public AppUser FindByName(string userName)
+        {
+            var user = _dbConnection.QueryFirstOrDefault<AppUser>("select * from AppUsers where UserName=@userName", new { UserName = userName });
+            return user;
         }
     }
 }
