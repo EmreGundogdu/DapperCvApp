@@ -1,14 +1,13 @@
 ﻿using Business.Interfaces;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using Web.Models;
 
 namespace Web.Controllers
 {
-    
+
     public class AuthController : Controller
     {
         private readonly IAppUserService _appUserService;

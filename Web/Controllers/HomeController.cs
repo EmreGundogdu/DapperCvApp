@@ -1,8 +1,6 @@
 ﻿using Business.Interfaces;
 using Entities.Concrete;
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
-using Web.Models;
 
 namespace Web.Controllers
 {
