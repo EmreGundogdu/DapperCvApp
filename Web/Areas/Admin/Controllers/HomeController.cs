@@ -1,4 +1,7 @@
 ﻿using Business.Interfaces;
+using DTO.DTOs.AppUserDtos;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Web.Models;
@@ -58,8 +61,25 @@ namespace Web.Areas.Admin.Controllers
         }
         public IActionResult ChangePassword()
         {
+            var user = _appUserService.FindByName(User.Identity.Name);
             TempData["active"] = "Sifre";
-            return View();
+            return View(new AppUserPasswordDto
+            {
+                Id = user.Id
+            });
+        }
+        [HttpPost]
+        public IActionResult ChangePassword(AppUserPasswordDto model)
+        {
+            TempData["active"] = "Sifre";
+            if (ModelState.IsValid)
+            {
+                var updatedUser = _appUserService.FindByName(User.Identity.Name);
+                updatedUser.Password = model.Password;
+                _appUserService.Update(updatedUser);
+                HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            }
+            return View(model);
         }
     }
 }

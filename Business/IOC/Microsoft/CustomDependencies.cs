@@ -29,6 +29,7 @@ namespace Business.IOC.Microsoft
             services.AddScoped<IAppUserService, AppUserManager>();
 
             services.AddTransient<IValidator<AppUserUpdateDto>, AppUserUpdateDtoValidator>();
+            services.AddTransient<IValidator<AppUserPasswordDto>, AppuserPasswordDtoValidator>();
             services.AddTransient<IValidator<CertificationAddDto>, CertificationAddDtoValidator>();
             services.AddTransient<IValidator<CertificationUpdateDto>, CertificationUpdateDtoValidator>();
             services.AddTransient<IValidator<EducationAddDto>, EducationAddDtoValidator>();

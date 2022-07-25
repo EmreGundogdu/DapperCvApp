@@ -5,8 +5,8 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews().AddFluentValidation();
 builder.Services.AddCustomDependencies(builder.Configuration);
+builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(opt =>
 {
     opt.Cookie.HttpOnly = true;
@@ -16,6 +16,7 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
     opt.ExpireTimeSpan = TimeSpan.FromDays(15);
     opt.LoginPath = new PathString("/Auth/Login");
 });
+builder.Services.AddControllersWithViews().AddFluentValidation();
 
 var app = builder.Build();
 
