@@ -18,8 +18,9 @@ namespace Web.Areas.Admin.Controllers
 
         public IActionResult Index()
         {
+            TempData["active"] = "Bilgilerim";
             var user = _appUserService.FindByName(User.Identity.Name);
-            var appUserListDto = new AppUserUpdateModel
+            var appUserUpdateModel = new AppUserUpdateModel
             {
                 FirstName = user.FirstName,
                 Email = user.Email,
@@ -30,11 +31,12 @@ namespace Web.Areas.Admin.Controllers
                 PhoneNumber = user.PhoneNumber,
                 ShortDescription = user.ShortDescription,
             };
-            return View(appUserListDto);
+            return View(appUserUpdateModel);
         }
         [HttpPost]
         public IActionResult Index(AppUserUpdateModel model)
         {
+            TempData["active"] = "Bilgilerim";
             var updateAppUser = _appUserService.GetById(model.Id);
             if (model.Picture != null)
             {
@@ -51,8 +53,13 @@ namespace Web.Areas.Admin.Controllers
             updateAppUser.Address = model.Address;
             updateAppUser.Email = model.Email;
             _appUserService.Update(updateAppUser);
-
-            return View(model);
+            TempData["message"] = "İşleminiz başarıyla gerçekleşti.";
+            return RedirectToAction("Index");
+        }
+        public IActionResult ChangePassword()
+        {
+            TempData["active"] = "Sifre";
+            return View();
         }
     }
 }

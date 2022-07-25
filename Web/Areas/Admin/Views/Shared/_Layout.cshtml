@@ -16,14 +16,10 @@
     <div class="d-flex" id="wrapper">
         <!-- Sidebar-->
         <div class="border-end bg-white" id="sidebar-wrapper">
-            <div class="sidebar-heading border-bottom bg-light">Start Bootstrap</div>
+            <div class="sidebar-heading border-bottom bg-light">CvApp Admin Panel</div>
             <div class="list-group list-group-flush">
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Dashboard</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Shortcuts</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Overview</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Events</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Profile</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Status</a>
+                <a asp-action="Index" asp-controller="Home" asp-area="Admin" class="@(TempData["active"]?.ToString()=="Bilgilerim"?"active":"") list-group-item list-group-item-action list-group-item-light p-3" >Bilgilerim</a>
+                <a  asp-action="ChangePassword" asp-controller="Home" asp-area="Admin" class="@(TempData["active"]?.ToString()=="Sifre"?"active":"") list-group-item list-group-item-action list-group-item-light p-3">Şifre Değişikliği</a>
             </div>
         </div>
         <!-- Page content wrapper-->
@@ -52,13 +48,21 @@
             </nav>
             <!-- Page content-->
             <div class="container-fluid">
-                <h1 class="mt-4">Simple Sidebar</h1>
-                <p>
-                    @RenderBody()
-                </p>
+                @{ if (!string.IsNullOrWhiteSpace(TempData["message"]?.ToString()))
+                    {
+                        <div class="alert alert-info alert-dismissible fade show my-2" role="alert">
+                            @TempData["message"].ToString()
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span area-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    }
+                }               
+
+                @RenderBody()
             </div>
         </div>
-       
+
     </div>
     <!-- Bootstrap core JS-->
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
