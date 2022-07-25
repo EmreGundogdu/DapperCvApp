@@ -1,10 +1,12 @@
-﻿using Entities.Interfaces;
+﻿using Dapper.Contrib.Extensions;
+using Entities.Interfaces;
 
 namespace Entities.Concrete
 {
     [Dapper.Contrib.Extensions.Table("AppUsers")]
     public class AppUser : ITable
     {
+        [ExplicitKey]
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
