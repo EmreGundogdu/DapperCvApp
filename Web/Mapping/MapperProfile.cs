@@ -11,6 +11,8 @@ namespace Web.Mapping
         {
             CreateMap<AppUser, AppUserListDto>().ReverseMap();
             CreateMap<Certification, CertificationListDto>().ReverseMap();
+            CreateMap<Certification, CertificationAddDto>().ReverseMap();
+            CreateMap<Certification, CertificationUpdateDto>().ReverseMap();
         }
     }
 }
