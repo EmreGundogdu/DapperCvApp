@@ -22,6 +22,7 @@
                 <a asp-action="ChangePassword" asp-controller="Home" asp-area="Admin" class="@(TempData["active"]?.ToString()=="Sifre"?"active":"") list-group-item list-group-item-action list-group-item-light p-3">Şifre Değişikliği</a>
                 <a asp-action="Index" asp-controller="Certification" asp-area="Admin" class="@(TempData["active"]?.ToString()=="sertifika"?"active":"") list-group-item list-group-item-action list-group-item-light p-3">Sertifikalarım</a>
                 <a asp-action="Index" asp-controller="Education" asp-area="Admin" class="@(TempData["active"]?.ToString()=="egitim"?"active":"") list-group-item list-group-item-action list-group-item-light p-3">Eğitimlerim</a>
+                <a asp-action="Index" asp-controller="Education" asp-area="Admin" class="@(TempData["active"]?.ToString()=="deneyim"?"active":"") list-group-item list-group-item-action list-group-item-light p-3">Deneyimlerim</a>
             </div>
         </div>
         <!-- Page content wrapper-->

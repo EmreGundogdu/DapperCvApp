@@ -2,6 +2,7 @@
 using DTO.DTOs.AppUserDtos;
 using DTO.DTOs.CertificationDtos;
 using DTO.DTOs.EducationDtos;
+using DTO.DTOs.ExperienceDtos;
 using Entities.Concrete;
 
 namespace Web.Mapping
@@ -17,6 +18,9 @@ namespace Web.Mapping
             CreateMap<Education, EducationListDto>().ReverseMap();
             CreateMap<Education, EducationAddDto>().ReverseMap();
             CreateMap<Education, EducationUpdateDto>().ReverseMap();
+            CreateMap<Experiences, ExperienceAddDto>().ReverseMap();
+            CreateMap<Education, ExperienceListDto>().ReverseMap();
+            CreateMap<Education, ExperienceUpdateDto>().ReverseMap();
         }
     }
 }
