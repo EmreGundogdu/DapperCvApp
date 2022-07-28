@@ -62,9 +62,17 @@ namespace Web.Areas.Admin.Controllers
                 data.Icon = model.Icon;
                 data.Link = model.Link;
                 _smiservice.Update(data);
-                TempData["message"] = "Güncelleme işlemi başarılı"
+                TempData["message"] = "Güncelleme işlemi başarılı";
             }
             return View(model);
+        }
+        public IActionResult Delete(int id)
+        {
+            TempData["active"] = "ikon";
+            var data = _smiservice.GetById(id);
+            _smiservice.Delete(data);
+            TempData["message"] = "Silme işlemi başarılı";
+            return RedirectToAction("Index");
         }
     }
 }
