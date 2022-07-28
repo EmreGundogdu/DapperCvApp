@@ -26,6 +26,7 @@
                 <a asp-action="Index" asp-controller="Interest" asp-area="Admin" class="@(TempData["active"]?.ToString()=="hobi"?"active":"") list-group-item list-group-item-action list-group-item-light p-3">Hobilerim</a>
                 <a asp-action="Index" asp-controller="Skill" asp-area="Admin" class="@(TempData["active"]?.ToString()=="yetenek"?"active":"") list-group-item list-group-item-action list-group-item-light p-3">Yeteneklerim</a>
                 <a asp-action="Index" asp-controller="SocialMediaIcon" asp-area="Admin" class="@(TempData["active"]?.ToString()=="ikon"?"active":"") list-group-item list-group-item-action list-group-item-light p-3">Sosyal Medya</a>
+                <a asp-action="Logout" asp-area="" asp-controller="Auth" class="list-group-item list-group-item-action list-group-item-light p-3">Çıkış Yap</a>
             </div>
         </div>
         <!-- Page content wrapper-->
