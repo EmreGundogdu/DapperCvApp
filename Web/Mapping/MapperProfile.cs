@@ -5,6 +5,7 @@ using DTO.DTOs.EducationDtos;
 using DTO.DTOs.ExperienceDtos;
 using DTO.DTOs.InterestDtos;
 using DTO.DTOs.SkillDtos;
+using DTO.DTOs.SocailMediaIconDtos;
 using Entities.Concrete;
 
 namespace Web.Mapping
@@ -29,6 +30,9 @@ namespace Web.Mapping
             CreateMap<Interest, InterestListDto>().ReverseMap();
             CreateMap<Interest, InterestAddDto>().ReverseMap();
             CreateMap<Interest, InterestUpdateDto>().ReverseMap();
+            CreateMap<SocialMediaIcon, SocialMediaIconsUpdateDto>().ReverseMap();
+            CreateMap<SocialMediaIcon, SocialMediaIconsListDto>().ReverseMap();
+            CreateMap<SocialMediaIcon, SocialMediaIconsAddDto>().ReverseMap();
         }
     }
 }

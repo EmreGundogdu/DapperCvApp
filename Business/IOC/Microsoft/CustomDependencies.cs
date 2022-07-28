@@ -27,6 +27,8 @@ namespace Business.IOC.Microsoft
             services.AddScoped(typeof(IGenericService<>), typeof(GenericManager<>));
             services.AddScoped<IAppUserRepository, DpAppUserRepository>();
             services.AddScoped<IAppUserService, AppUserManager>();
+            services.AddScoped<ISocialMediaIconService, SocialMediaIconManager>();
+            services.AddScoped<IDpSocialMediaRepository, DpSocialMediaRepository>();
 
             services.AddTransient<IValidator<AppUserUpdateDto>, AppUserUpdateDtoValidator>();
             services.AddTransient<IValidator<AppUserPasswordDto>, AppuserPasswordDtoValidator>();

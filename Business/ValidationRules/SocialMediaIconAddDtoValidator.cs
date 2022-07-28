@@ -7,7 +7,6 @@ namespace Business.ValidationRules
     {
         public SocialMediaIconAddDtoValidator()
         {
-            RuleFor(x => x.AppUserId).InclusiveBetween(1, int.MaxValue).WithMessage("AppUserId alanı boş bırakılamaz");
             RuleFor(x => x.Icon).NotEmpty().WithMessage("Ikon boş bırakılamaz");
             RuleFor(x => x.Link).NotEmpty().WithMessage("Ikon boş bırakılamaz");
         }
