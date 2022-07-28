@@ -22,7 +22,9 @@
                 <a asp-action="ChangePassword" asp-controller="Home" asp-area="Admin" class="@(TempData["active"]?.ToString()=="Sifre"?"active":"") list-group-item list-group-item-action list-group-item-light p-3">Şifre Değişikliği</a>
                 <a asp-action="Index" asp-controller="Certification" asp-area="Admin" class="@(TempData["active"]?.ToString()=="sertifika"?"active":"") list-group-item list-group-item-action list-group-item-light p-3">Sertifikalarım</a>
                 <a asp-action="Index" asp-controller="Education" asp-area="Admin" class="@(TempData["active"]?.ToString()=="egitim"?"active":"") list-group-item list-group-item-action list-group-item-light p-3">Eğitimlerim</a>
-                <a asp-action="Index" asp-controller="Education" asp-area="Admin" class="@(TempData["active"]?.ToString()=="deneyim"?"active":"") list-group-item list-group-item-action list-group-item-light p-3">Deneyimlerim</a>
+                <a asp-action="Index" asp-controller="Experience" asp-area="Admin" class="@(TempData["active"]?.ToString()=="deneyim"?"active":"") list-group-item list-group-item-action list-group-item-light p-3">Deneyimlerim</a>
+                <a asp-action="Index" asp-controller="Interest" asp-area="Admin" class="@(TempData["active"]?.ToString()=="hobi"?"active":"") list-group-item list-group-item-action list-group-item-light p-3">Hobilerim</a>
+                <a asp-action="Index" asp-controller="Skill" asp-area="Admin" class="@(TempData["active"]?.ToString()=="yetenek"?"active":"") list-group-item list-group-item-action list-group-item-light p-3">Yeteneklerim</a>
             </div>
         </div>
         <!-- Page content wrapper-->

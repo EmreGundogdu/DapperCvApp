@@ -2,7 +2,7 @@
 
 namespace DTO.DTOs.InterestDtos
 {
-    public class InterestAddDto : IDto
+    public class InterestUpdateDto : IDto
     {
         public int Id { get; set; }
         public string Description { get; set; }

@@ -36,9 +36,9 @@ namespace Business.IOC.Microsoft
             services.AddTransient<IValidator<EducationUpdateDto>, EducationUpdateDtoValidator>();
             services.AddTransient<IValidator<ExperienceAddDto>, ExperienceAddDtoValidator>();
             services.AddTransient<IValidator<ExperienceUpdateDto>, ExperienceUpdateDtoValidator>();
-            services.AddTransient<IValidator<InterestAddDto>, InterestAddDtoValidator>();
+            services.AddTransient<IValidator<InterestUpdateDto>, InterestAddDtoValidator>();
             services.AddTransient<IValidator<InterestUpdateDto>, InterestUpdateDtoValidator>();
-            services.AddTransient<IValidator<SkillAddDo>, SkillAddDtoValidator>();
+            services.AddTransient<IValidator<SkillAddDto>, SkillAddDtoValidator>();
             services.AddTransient<IValidator<SkillUpdateDto>, SkillUpdateDtoValidator>();
             services.AddTransient<IValidator<SocialMediaIconsAddDto>, SocialMediaIconAddDtoValidator>();
             services.AddTransient<IValidator<SocialMediaIconsUpdateDto>, SocialMediaIconUpdateDtoValidator>();

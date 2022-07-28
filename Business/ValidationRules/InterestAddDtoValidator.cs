@@ -3,7 +3,7 @@ using FluentValidation;
 
 namespace Business.ValidationRules
 {
-    public class InterestAddDtoValidator : AbstractValidator<InterestAddDto>
+    public class InterestAddDtoValidator : AbstractValidator<InterestUpdateDto>
     {
         public InterestAddDtoValidator()
         {

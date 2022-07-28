@@ -3,7 +3,7 @@ using FluentValidation;
 
 namespace Business.ValidationRules
 {
-    public class SkillAddDtoValidator : AbstractValidator<SkillAddDo>
+    public class SkillAddDtoValidator : AbstractValidator<SkillAddDto>
     {
         public SkillAddDtoValidator()
         {
